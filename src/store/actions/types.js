@@ -1,0 +1,3 @@
+export const VIDEOS_START = 'VIDEOS_START';
+export const VIDEOS_SUCCESS = 'VIDEOS_SUCCESS';
+export const VIDEOS_FAIL = 'VIDEOS_FAIL';
