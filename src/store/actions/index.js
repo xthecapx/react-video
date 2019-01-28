@@ -1,1 +1,1 @@
-export { fetchVideos } from './videos';
+export { fetchVideos, selectVideo } from './videos';

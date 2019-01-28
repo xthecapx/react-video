@@ -2,7 +2,8 @@ import * as types from '../actions/types';
 
 const initialState = {
   videos: [],
-  loading: false
+  loading: false,
+  currentVideoId: null
 };
 
 const reducer = (state = initialState, action) => {
@@ -23,6 +24,11 @@ const reducer = (state = initialState, action) => {
         ...state,
         error: action.error,
         loading: false
+      };
+    case types.SELECT_VIDEO:
+      return {
+        ...state,
+        currentVideoId: action.id
       };
     default:
       return state;

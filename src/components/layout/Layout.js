@@ -1,15 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import classes from './Layout.module.scss';
 
-class Layout extends Component {
-  render() {
-    return (
-      <>
-        <div>Menu</div>
-        <main className={classes.Content}>{this.props.children}</main>
-      </>
-    );
-  }
+import NavigationItems from '../NavigationItems/NavigationItems';
+
+function Layout(props) {
+  console.log(props);
+  return (
+    <>
+      <header>
+        <NavigationItems />
+      </header>
+      <main className={classes.Content}>{props.children}</main>
+    </>
+  );
 }
 
 export default Layout;
