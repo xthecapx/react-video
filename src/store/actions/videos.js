@@ -1,23 +1,23 @@
 import * as types from './types';
 import axios from '../../axios-videos';
 
-export const videosSucess = orders => {
+export const videosSucess = videos => {
   return {
-    type: types.FETCH_ORDERS_SUCCESS,
-    orders
+    type: types.VIDEOS_SUCCESS,
+    videos
   };
 };
 
 export const videosFail = error => {
   return {
-    type: types.FETCH_ORDERS_FAIL,
+    type: types.VIDEOS_FAIL,
     error
   };
 };
 
 export const videosStart = () => {
   return {
-    type: types
+    type: types.VIDEOS_START
   };
 };
 
@@ -28,7 +28,7 @@ export const fetchVideos = () => {
       .get(`/videos?api_key=${process.env.REACT_APP_KEY}&auth_token=1&limit=10&workflow_status=ready`)
       .then(res => {
         console.log('[Redux][fetchVideos]', res);
-        dispatch(videosSucess(res));
+        dispatch(videosSucess(res.data));
       })
       .catch(error => {
         dispatch(videosFail(error));
