@@ -1,0 +1,23 @@
+.Arrow {
+  position: absolute;
+  padding: 3rem; /* Arrow size */
+  box-shadow: 1px -1px 0 1px #f73776 inset;
+  border: solid transparent;
+  transition: 0.2s;
+  top: 38%;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 2px -2px 0 2px #f73776 inset;
+  }
+
+  &--left {
+    transform: rotate(45deg);
+    left: 50px;
+  }
+
+  &--right {
+    transform: rotate(225deg);
+    right: 50px;
+  }
+}

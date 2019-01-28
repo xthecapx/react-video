@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { selectVideo } from '../../store/actions';
-import { withRouter } from 'react-router';
+import classes from './VideoPlayer.module.scss';
 
 import VideoContainer from '../../components/VideoContainer/VideoContainer';
 import VideoNavigation from '../../components/VideoNavigation/VideoNavigation';
@@ -71,11 +71,10 @@ class VideoPlayer extends Component {
     }
 
     return (
-      <>
-        <h1>VideoPlayer</h1>
+      <div className={classes.VideoPlayer}>
         {$video}
         <VideoNavigation clickedLeft={this.clickedLeftHandler} clickedRigth={this.clickedRigthHandler} />
-      </>
+      </div>
     );
   }
 }

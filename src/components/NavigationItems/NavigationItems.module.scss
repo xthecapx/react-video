@@ -7,7 +7,9 @@
   align-items: center;
   height: 100%;
   width: 100%;
-  background: #f73776;
+  max-width: 1200px;
+  justify-content: flex-end;
+  margin: 0 auto;
 }
 
 @media (min-width: 500px) {

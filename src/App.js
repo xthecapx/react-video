@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Route, Switch, withRouter } from 'react-router-dom';
+import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import './App.css';
 
 import { fetchVideos } from './store/actions/videos';
 
@@ -15,12 +14,12 @@ class App extends Component {
   }
 
   render() {
-    console.log(9);
     return (
       <Layout>
         <Switch>
           <Route path='/video/:id' component={VideoPlayer} />
-          <Route path='/' exact component={VideoList} />
+          <Route path='/video-list' exact component={VideoList} />
+          <Redirect from='/' to='/video/0' />
           <Route
             render={() => {
               return <h1>Not found!!!</h1>;

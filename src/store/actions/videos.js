@@ -27,7 +27,6 @@ export const fetchVideos = () => {
     axios
       .get(`/videos?api_key=${process.env.REACT_APP_KEY}&auth_token=1&limit=10&workflow_status=ready`)
       .then(res => {
-        console.log('[Redux][fetchVideos]', res);
         dispatch(selectVideo(res.data[0].id));
         dispatch(videosSucess(res.data));
       })

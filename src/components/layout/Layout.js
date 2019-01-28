@@ -4,10 +4,9 @@ import classes from './Layout.module.scss';
 import NavigationItems from '../NavigationItems/NavigationItems';
 
 function Layout(props) {
-  console.log(props);
   return (
     <>
-      <header>
+      <header className={classes.Header}>
         <NavigationItems />
       </header>
       <main className={classes.Content}>{props.children}</main>
